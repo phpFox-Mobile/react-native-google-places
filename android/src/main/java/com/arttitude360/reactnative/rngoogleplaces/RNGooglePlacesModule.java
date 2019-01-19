@@ -354,6 +354,8 @@ public class RNGooglePlacesModule extends ReactContextBaseJavaModule implements 
 
     @ReactMethod
     public void getCurrentPlace(final Promise promise) {
+        try{
+
         Places.PlaceDetectionApi.getCurrentPlace(mGoogleApiClient, null)
             .setResultCallback(new ResultCallback<PlaceLikelihoodBuffer>() {
                 @Override
@@ -389,6 +391,10 @@ public class RNGooglePlacesModule extends ReactContextBaseJavaModule implements 
                     }
                 }
             });
+        }catch (Exception ex){
+            promise.reject("E_PLACE_DETECTION_API_ERROR",
+                    new Error("Error making places detection api call: " + ex.getMessage()));
+        }
     }
 
     private WritableArray processLookupByIDsPlaces(final PlaceBuffer places) {
