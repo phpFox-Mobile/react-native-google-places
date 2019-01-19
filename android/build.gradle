@@ -39,7 +39,7 @@ dependencies {
 
     implementation "com.facebook.react:react-native:+"
     implementation "com.google.android.gms:play-services-base:$googlePlayServicesVersion"
-    implementation "com.google.android.gms:play-services-places:$googlePlayServicesVersion"
-    implementation "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
+    implementation "com.google.android.gms:play-services-places:16.0.0"
+    implementation "com.google.android.gms:play-services-location:16.0.0"
     implementation "com.google.maps.android:android-maps-utils:$androidMapsUtilsVersion"
 }
